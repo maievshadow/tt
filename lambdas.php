@@ -32,3 +32,24 @@ call_user_func($classname .'::say_hello'); // As of 5.2.3
 $myobject = new myclass();
 
 call_user_func(array($myobject, 'say_hello'));
+
+function getNameFunc() {
+	$string = 'Denoncourt';
+	return function() use ($string) { return $string; }; //attention use 
+}
+$name = getNameFunc();
+$name();
+assert ($name() == 'Denoncourt');
+class Person {
+	var $first;
+	public function __call($method, $args) {
+		return call_user_func_array( $this->$method, $args);
+	}
+}
+
+$me = new Person();
+$me->first = 'Don';
+$me->sayGoodbye = function() use ($me) {
+	return 'Bye '.$me->first;
+};
+assert($me->sayGoodbye() == 'Bye Don');
