@@ -1,6 +1,7 @@
 <?php
 define("APP_PATH", dirname(__FILE__));
-define('LIB_PATH',  APP_PATH . '/library');
+define('LIB_PATH',  APP_PATH . '/lib');
+define('CORE_PATH',  APP_PATH . '/core');
 define("VIEW_PATH", APP_PATH . '/view');
 define("CONT_PATH", APP_PATH . '/controller');
 define("CONFIG_PATH", APP_PATH . '/config');
