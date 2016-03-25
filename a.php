@@ -15,5 +15,14 @@ function test(){
     };
 }
 
-$t = test();
-$t('qqq');
+#$t = test();
+#$t('qqq');
+
+$a = array(1,2);
+$b = array( 2=> 3, 3=> 4);
+
+$c = $a + $b;
+$d = array_merge($a, $b);
+$e = array_merge($b, $a);
+
+var_dump($c, $d, $e);exit;
